@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define MAX_ITERATION 21
+#define DIVIDEND 3
+
 typedef enum
 {
     plus,
@@ -18,6 +21,8 @@ typedef enum
 } CalculationType;
 
 int calculate(CalculationType operator, int firstOperand, int secondOperand);
+unsigned long long quandMultiplier (unsigned long long bigNumber);
+unsigned int factorial( unsigned int n);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -35,6 +40,25 @@ int main(int argc, const char * argv[]) {
         {
             calculate(divis, firstOperand, secondOperand);
         }
+        
+        for (int i = 1; i < MAX_ITERATION; i++) {
+            
+            if (quandMultiplier(i) == 16) {
+                break;
+            }
+            if (quandMultiplier(i) % DIVIDEND == 0) {
+                NSLog(@"Число %llu кратное %d", quandMultiplier(i), DIVIDEND);
+            }
+            else
+            {
+                NSLog(@"Результат %llu", quandMultiplier(i) / DIVIDEND);
+                continue;
+            }
+            
+            NSLog(@"Осталось %d итераций", MAX_ITERATION - i);
+        }
+        
+        NSLog(@"factorial 5 = %d", factorial(5));
 
     }
     
@@ -62,5 +86,21 @@ int calculate(CalculationType operator, int firstOperand, int secondOperand)
         default:
             NSLog(@"Операция %u не определена", operator);
             break;
+    }
+}
+
+unsigned long long quandMultiplier (unsigned long long bigNumber)
+{
+    return bigNumber * 4;
+}
+
+unsigned int factorial( unsigned int n)
+{
+    if (n == 1) {
+        return n;
+    }
+    else
+    {
+        return n * factorial(n - 1);
     }
 }
