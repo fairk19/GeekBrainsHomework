@@ -58,7 +58,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Осталось %d итераций", MAX_ITERATION - i);
         }
         
-        NSLog(@"factorial 5 = %d", factorial(5));
+        NSLog(@"factorial 5 = %d", factorial(5));
 
     }
     
