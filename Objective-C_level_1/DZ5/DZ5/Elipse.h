@@ -9,5 +9,11 @@
 #import "Figure.h"
 
 @interface Elipse : Figure
+{
+    float _a, _b;
+}
+- (float) length;
+- (void) setA: (float) a;
+- (void) setB: (float) b;
 
 @end

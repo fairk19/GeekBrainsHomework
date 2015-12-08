@@ -9,5 +9,11 @@
 #import "Figure.h"
 
 @interface Circle : Figure
+{
+    float _radius;
+}
+
+- (float) length;
+- (void) setRadius: (float) r;
 
 @end

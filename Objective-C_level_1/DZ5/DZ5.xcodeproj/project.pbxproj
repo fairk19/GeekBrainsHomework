@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		11206E4D1C1734880072FDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11206E4C1C1734880072FDE3 /* main.m */; };
+		11206E551C1734AE0072FDE3 /* Figure.m in Sources */ = {isa = PBXBuildFile; fileRef = 11206E541C1734AE0072FDE3 /* Figure.m */; };
+		11206E581C1734EC0072FDE3 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 11206E571C1734EC0072FDE3 /* Circle.m */; };
+		11206E5B1C1734F80072FDE3 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 11206E5A1C1734F80072FDE3 /* Rectangle.m */; };
+		11206E5E1C1735010072FDE3 /* Elipse.m in Sources */ = {isa = PBXBuildFile; fileRef = 11206E5D1C1735010072FDE3 /* Elipse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		11206E491C1734880072FDE3 /* DZ5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DZ5; sourceTree = BUILT_PRODUCTS_DIR; };
 		11206E4C1C1734880072FDE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11206E531C1734AE0072FDE3 /* Figure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Figure.h; sourceTree = "<group>"; };
+		11206E541C1734AE0072FDE3 /* Figure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Figure.m; sourceTree = "<group>"; };
+		11206E561C1734EC0072FDE3 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		11206E571C1734EC0072FDE3 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		11206E591C1734F80072FDE3 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		11206E5A1C1734F80072FDE3 /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
+		11206E5C1C1735010072FDE3 /* Elipse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elipse.h; sourceTree = "<group>"; };
+		11206E5D1C1735010072FDE3 /* Elipse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elipse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				11206E4C1C1734880072FDE3 /* main.m */,
+				11206E531C1734AE0072FDE3 /* Figure.h */,
+				11206E541C1734AE0072FDE3 /* Figure.m */,
+				11206E561C1734EC0072FDE3 /* Circle.h */,
+				11206E571C1734EC0072FDE3 /* Circle.m */,
+				11206E591C1734F80072FDE3 /* Rectangle.h */,
+				11206E5A1C1734F80072FDE3 /* Rectangle.m */,
+				11206E5C1C1735010072FDE3 /* Elipse.h */,
+				11206E5D1C1735010072FDE3 /* Elipse.m */,
 			);
 			path = DZ5;
 			sourceTree = "<group>";
@@ -118,7 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11206E581C1734EC0072FDE3 /* Circle.m in Sources */,
 				11206E4D1C1734880072FDE3 /* main.m in Sources */,
+				11206E551C1734AE0072FDE3 /* Figure.m in Sources */,
+				11206E5B1C1734F80072FDE3 /* Rectangle.m in Sources */,
+				11206E5E1C1735010072FDE3 /* Elipse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

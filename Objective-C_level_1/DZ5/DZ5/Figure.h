@@ -10,4 +10,7 @@
 
 @interface Figure : NSObject
 
+- (float) square;
+- (void) description;
+
 @end
