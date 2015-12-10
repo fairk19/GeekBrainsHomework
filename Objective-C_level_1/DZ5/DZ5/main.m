@@ -34,6 +34,7 @@ void printRandFiguresList(Figure* start);
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        //1
 //        Circle *circle = [[Circle alloc] init];
 //        [circle setRadius: 5];
 //        [circle description];
@@ -47,7 +48,7 @@ int main(int argc, const char * argv[]) {
 //        [elipse setA: 3];
 //        [elipse setB: 5];
 //        [elipse description];
-//
+     
         //5
 //        Figure *startList = creatChain(5);
 //        printList(startList);
@@ -63,9 +64,8 @@ int main(int argc, const char * argv[]) {
 //        printList(startList);
         
         //11
-//        Figure *startRandList = createAnyChain(5);
-//        printRandFiguresList(startRandList);
-        
+        Figure *startRandList = createAnyChain(5);
+        printRandFiguresList(startRandList);
         
         
     }
@@ -133,6 +133,9 @@ void pop (Figure** start)
 
 BOOL deleteNth (Figure** start, int n)
 {
+    Figure *saveStart =  [[Figure alloc] init];
+    saveStart = (*start);
+    
     if (n == 0) {
         
         pop(start);
@@ -152,6 +155,7 @@ BOOL deleteNth (Figure** start, int n)
         tmp = (*start)->next;
         (*start)->next = tmp->next;
         
+        (*start) = saveStart;
         return YES;
     }
 }
@@ -208,7 +212,7 @@ Figure* createAnyChain(int sizelist)
     Figure *curr = [[Figure alloc] init];
     curr = start;
     
-    for (int i = 0; i < sizelist - 1; i++) {
+    for (int i = 0; i < sizelist; i++) {
         
         Figure *next = [[Figure alloc] init];
         next = createRandFigure();
