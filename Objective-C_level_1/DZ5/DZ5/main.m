@@ -12,30 +12,61 @@
 #import "Rectangle.h"
 #import "Elipse.h"
 
+typedef enum {
+    circle,
+    rectangle,
+    elipse
+} TypeFigure;
 
 int myRandom (int minValue, int maxValue);
-Figure* creatChain();
-BOOL deletFigure (Figure* start, int index);
+Figure* creatChain(int sizelist);
+BOOL deleteNth (Figure** start, int n);
+void pushBack (Figure* start, Figure* figure);
+void printList (Figure* start);
+Figure* getLast (Figure* start);
+void pop (Figure** start);
+
+//11
+Figure* createAnyChain(int sizelist);
+Figure* createRandFigure();
+void printRandFiguresList(Figure* start);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Circle *circle = [[Circle alloc] init];
-        [circle setRadius: 5];
-        [circle description];
+//        Circle *circle = [[Circle alloc] init];
+//        [circle setRadius: 5];
+//        [circle description];
+//
+//        Rectangle *rectangle = [[Rectangle alloc] init];
+//        [rectangle setHeight: 10];
+//        [rectangle setWidth: 5];
+//        [rectangle description];
+//        
+//        Elipse *elipse = [[Elipse alloc] init];
+//        [elipse setA: 3];
+//        [elipse setB: 5];
+//        [elipse description];
+//
+        //5
+//        Figure *startList = creatChain(5);
+//        printList(startList);
+//        pop(&startList);
+//        
+//        Figure *newFigure = [[Figure alloc] init];
+//        newFigure->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+//        newFigure->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+//        newFigure->next = nil;
+//        
+//        pushBack(startList, newFigure);
+//        deleteNth(&startList, 3);
+//        printList(startList);
         
-        Rectangle *rectangle = [[Rectangle alloc] init];
-        [rectangle setHeight: 10];
-        [rectangle setWidth: 5];
-        [rectangle description];
+        //11
+//        Figure *startRandList = createAnyChain(5);
+//        printRandFiguresList(startRandList);
         
-        Elipse *elipse = [[Elipse alloc] init];
-        [elipse setA: 3];
-        [elipse setB: 5];
-        [elipse description];
         
-        Figure *startList = creatChain();
-        deletFigure(startList, 0);
         
     }
     return 0;
@@ -46,71 +77,154 @@ int myRandom (int minValue, int maxValue)
     return rand() % (maxValue + minValue);
 }
 
-Figure* creatChain()
+Figure* creatChain(int sizeList)
 {
-    Figure *currentFigure = [[Figure alloc] init];
-    currentFigure->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-    currentFigure->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-    currentFigure->next = nil;
-    
     Figure *start = [[Figure alloc] init];
-    start = currentFigure;
+    start->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+    start->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+    start->next = nil;
     
-    for (int i = 0; i < SIZE_CHAIN; i++) {
+    Figure *curr = [[Figure alloc] init];
+    curr = start;
+    
+    for (int i = 0; i < sizeList - 1; i++) {
         
-        Figure *nextFigure = [[Figure alloc] init];
-        nextFigure->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-        nextFigure->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-        nextFigure->next = nil;
+        Figure *next = [[Figure alloc] init];
+        next->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+        next->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+        next->next = nil;
         
-        currentFigure->next = nextFigure;
-        
-        currentFigure = nextFigure;
+        curr->next = next;
+        curr = next;
         
     }
     
-    Figure *iterFigure = [[Figure alloc] init];
-    iterFigure = start;
-    
-    while (iterFigure->next != nil)
-    {
-        NSLog(@"Figure width = %d, height = %d", iterFigure->width , iterFigure->height);
-        iterFigure = iterFigure->next;
-    };
-    NSLog(@"/////////////////////////////////////");
     return start;
 }
 
-BOOL deletFigure (Figure* start, int index)
+void printList (Figure* start)
 {
-    Figure *iterFigure = [[Figure alloc] init];
-    iterFigure = start;
+    while (start) {
+        NSLog(@"Figure width = %d, height = %d", start->width , start->height);
+        start = start->next;
+    }
+    NSLog(@"--------------------------------------------------------------");
 
-    int i = 0;
-    
-    while (i++ < index - 1 && iterFigure->next != nil) {
-        iterFigure = iterFigure->next;
+}
+
+Figure* getLast (Figure* start)
+{
+    if (!start) {
+        return nil;
     }
     
-    if (iterFigure->next == nil) {
-        NSLog(@"Элемента с таким номером нет в списке.");
-        return NO;
+    while (start->next) {
+        start = start->next;
     }
-    else
-    {
-        Figure *temp = [[Figure alloc] init];
-        temp = iterFigure->next;
-        iterFigure->next = nil;
-        iterFigure->next = temp->next;
-        temp->next = nil;
+    return start;
+}
+
+void pop (Figure** start)
+{
+    Figure *tmp = [[Figure alloc] init];
+    tmp = (*start);
+    (*start) = tmp->next;
+}
+
+BOOL deleteNth (Figure** start, int n)
+{
+    if (n == 0) {
+        
+        pop(start);
+        return YES;
+        
+    } else {
+        
+        while ((*start) && --n > 0) {
+            (*start) = (*start)->next;
+        }
+        
+        if (!(*start) || !(*start)->next) {
+            return NO;
+        }
+        
+        Figure *tmp = [[Figure alloc] init];
+        tmp = (*start)->next;
+        (*start)->next = tmp->next;
+        
+        return YES;
+    }
+}
+
+void pushBack (Figure* start, Figure* figure)
+{
+    Figure *lastFigure = [[Figure alloc] init];
+    lastFigure = getLast(start);
+    lastFigure->next = figure;
+}
+
+Figure* createRandFigure()
+{
+    TypeFigure typeFigure = rand() % (3 + 1);
+    Figure* randFigure = [[Figure alloc] init];
+    
+    switch (typeFigure) {
+        case circle:
+        {
+            Circle *circle = [[Circle alloc] init];
+            [circle setRadius: myRandom(MIN_RAND_VALUE , MAX_RAND_VALUE)];
+            randFigure = circle;
+            break;
+        }
+        case rectangle:
+        {
+            Rectangle *rectangle = [[Rectangle alloc] init];
+            [rectangle setHeight: myRandom(MIN_RAND_VALUE , MAX_RAND_VALUE)];
+            [rectangle setWidth: myRandom(MIN_RAND_VALUE , MAX_RAND_VALUE)];
+            randFigure = rectangle;
+            break;
+        }
+        case elipse:
+        {
+            Elipse *elipse = [[Elipse alloc] init];
+            [elipse setA: myRandom(MIN_RAND_VALUE , MAX_RAND_VALUE)];
+            [elipse setB: myRandom(MIN_RAND_VALUE , MAX_RAND_VALUE)];
+            randFigure = elipse;
+            break;
+        }
+            
+        default:
+            break;
     }
     
-    iterFigure = start;
-    while (iterFigure->next != nil)
-    {
-        NSLog(@"Figure width = %d, height = %d", iterFigure->width , iterFigure->height);
-        iterFigure = iterFigure->next;
-    };
+    return randFigure;
+}
+
+Figure* createAnyChain(int sizelist)
+{
+    Figure *start = [[Figure alloc] init];
+    start = createRandFigure();
     
-    return YES;
+    Figure *curr = [[Figure alloc] init];
+    curr = start;
+    
+    for (int i = 0; i < sizelist - 1; i++) {
+        
+        Figure *next = [[Figure alloc] init];
+        next = createRandFigure();
+        
+        curr->next = next;
+        curr = next;
+        
+    }
+    
+    return start;
+}
+
+void printRandFiguresList(Figure* start)
+{
+    while (start) {
+        [start description];
+        start = start->next;
+    }
 }
