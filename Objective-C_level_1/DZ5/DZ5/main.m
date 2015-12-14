@@ -32,42 +32,47 @@ void insertNext(Figure** curr, Figure* insert);
 Figure* createAnyChain(int sizelist);
 Figure* createRandFigure();
 void printRandFiguresList(Figure* start);
+void swap(Figure** curr, Figure** next);
 void bubble_sort(Figure** start);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         //1
-        Circle *circle = [[Circle alloc] init];
-        [circle setRadius: 5];
-        [circle description];
-
-        Rectangle *rectangle = [[Rectangle alloc] init];
-        [rectangle setHeight: 10];
-        [rectangle setWidth: 5];
-        [rectangle description];
-        
-        Elipse *elipse = [[Elipse alloc] init];
-        [elipse setA: 3];
-        [elipse setB: 5];
-        [elipse description];
+//        Circle *circle = [[Circle alloc] init];
+//        [circle setRadius: 5];
+//        [circle description];
+//
+//        Rectangle *rectangle = [[Rectangle alloc] init];
+//        [rectangle setHeight: 10];
+//        [rectangle setWidth: 5];
+//        [rectangle description];
+//        
+//        Elipse *elipse = [[Elipse alloc] init];
+//        [elipse setA: 3];
+//        [elipse setB: 5];
+//        [elipse description];
      
         //5
-        Figure *startList = creatChain(5);
-        printList(startList);
-        pop(&startList);
-        
-        Figure *newFigure = [[Figure alloc] init];
-        newFigure->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-        newFigure->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
-        newFigure->next = nil;
-        
-        pushBack(startList, newFigure);
-        deleteNth(&startList, 3);
-        printList(startList);
+//        Figure *startList = creatChain(5);
+//        printList(startList);
+//        pop(&startList);
+//        
+//        Figure *newFigure = [[Figure alloc] init];
+//        newFigure->height = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+//        newFigure->width = myRandom(MIN_RAND_VALUE, MAX_RAND_VALUE);
+//        newFigure->next = nil;
+//        
+//        pushBack(startList, newFigure);
+//        deleteNth(&startList, 3);
+//        printList(startList);
         
         //11
         Figure *startRandList = createAnyChain(5);
+        printRandFiguresList(startRandList);
+        
+        swap(&startRandList, &startRandList->next);
+        
         printRandFiguresList(startRandList);
         
         
@@ -234,6 +239,7 @@ void printRandFiguresList(Figure* start)
         [start description];
         start = start->next;
     }
+    NSLog(@"--------------------------------------------------------------");
 }
 
 void deleteNext(Figure** curr)
@@ -251,8 +257,11 @@ void insertNext(Figure** curr, Figure* insert)
     insert->next = tmp->next;
 }
 
-
-
+void swap(Figure** curr, Figure** next)
+{
+    insertNext(next, *curr);
+    deleteNext(curr);
+}
 
 
 
