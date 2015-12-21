@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1154140D1C14A2AC00914022"
-               BuildableName = "DZ3"
-               BlueprintName = "DZ3"
-               ReferencedContainer = "container:DZ3.xcodeproj">
+               BlueprintIdentifier = "11BC28381C282085003ED3B7"
+               BuildableName = "DZ7"
+               BlueprintName = "DZ7"
+               ReferencedContainer = "container:DZ7.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1154140D1C14A2AC00914022"
-            BuildableName = "DZ3"
-            BlueprintName = "DZ3"
-            ReferencedContainer = "container:DZ3.xcodeproj">
+            BlueprintIdentifier = "11BC28381C282085003ED3B7"
+            BuildableName = "DZ7"
+            BlueprintName = "DZ7"
+            ReferencedContainer = "container:DZ7.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1154140D1C14A2AC00914022"
-            BuildableName = "DZ3"
-            BlueprintName = "DZ3"
-            ReferencedContainer = "container:DZ3.xcodeproj">
+            BlueprintIdentifier = "11BC28381C282085003ED3B7"
+            BuildableName = "DZ7"
+            BlueprintName = "DZ7"
+            ReferencedContainer = "container:DZ7.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1154140D1C14A2AC00914022"
-            BuildableName = "DZ3"
-            BlueprintName = "DZ3"
-            ReferencedContainer = "container:DZ3.xcodeproj">
+            BlueprintIdentifier = "11BC28381C282085003ED3B7"
+            BuildableName = "DZ7"
+            BlueprintName = "DZ7"
+            ReferencedContainer = "container:DZ7.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

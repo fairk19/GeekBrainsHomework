@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		115414121C14A2AC00914022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 115414111C14A2AC00914022 /* main.m */; };
+		11BC283D1C282085003ED3B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BC283C1C282085003ED3B7 /* main.m */; };
+		11BC28451C282F80003ED3B7 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BC28441C282F80003ED3B7 /* Employee.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1154140C1C14A2AC00914022 /* CopyFiles */ = {
+		11BC28371C282085003ED3B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1154140E1C14A2AC00914022 /* DZ3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DZ3; sourceTree = BUILT_PRODUCTS_DIR; };
-		115414111C14A2AC00914022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11BC28391C282085003ED3B7 /* DZ7 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DZ7; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BC283C1C282085003ED3B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11BC28431C282F80003ED3B7 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		11BC28441C282F80003ED3B7 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1154140B1C14A2AC00914022 /* Frameworks */ = {
+		11BC28361C282085003ED3B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,101 +41,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		115414051C14A2AC00914022 = {
+		11BC28301C282085003ED3B7 = {
 			isa = PBXGroup;
 			children = (
-				115414101C14A2AC00914022 /* DZ3 */,
-				1154140F1C14A2AC00914022 /* Products */,
+				11BC283B1C282085003ED3B7 /* DZ7 */,
+				11BC283A1C282085003ED3B7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1154140F1C14A2AC00914022 /* Products */ = {
+		11BC283A1C282085003ED3B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1154140E1C14A2AC00914022 /* DZ3 */,
+				11BC28391C282085003ED3B7 /* DZ7 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		115414101C14A2AC00914022 /* DZ3 */ = {
+		11BC283B1C282085003ED3B7 /* DZ7 */ = {
 			isa = PBXGroup;
 			children = (
-				115414111C14A2AC00914022 /* main.m */,
+				11BC283C1C282085003ED3B7 /* main.m */,
+				11BC28431C282F80003ED3B7 /* Employee.h */,
+				11BC28441C282F80003ED3B7 /* Employee.m */,
 			);
-			path = DZ3;
+			path = DZ7;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1154140D1C14A2AC00914022 /* DZ3 */ = {
+		11BC28381C282085003ED3B7 /* DZ7 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 115414151C14A2AC00914022 /* Build configuration list for PBXNativeTarget "DZ3" */;
+			buildConfigurationList = 11BC28401C282085003ED3B7 /* Build configuration list for PBXNativeTarget "DZ7" */;
 			buildPhases = (
-				1154140A1C14A2AC00914022 /* Sources */,
-				1154140B1C14A2AC00914022 /* Frameworks */,
-				1154140C1C14A2AC00914022 /* CopyFiles */,
+				11BC28351C282085003ED3B7 /* Sources */,
+				11BC28361C282085003ED3B7 /* Frameworks */,
+				11BC28371C282085003ED3B7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DZ3;
-			productName = DZ3;
-			productReference = 1154140E1C14A2AC00914022 /* DZ3 */;
+			name = DZ7;
+			productName = DZ7;
+			productReference = 11BC28391C282085003ED3B7 /* DZ7 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		115414061C14A2AC00914022 /* Project object */ = {
+		11BC28311C282085003ED3B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Alexandr Fedorov";
 				TargetAttributes = {
-					1154140D1C14A2AC00914022 = {
-						CreatedOnToolsVersion = 7.1.1;
+					11BC28381C282085003ED3B7 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = 115414091C14A2AC00914022 /* Build configuration list for PBXProject "DZ3" */;
+			buildConfigurationList = 11BC28341C282085003ED3B7 /* Build configuration list for PBXProject "DZ7" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 115414051C14A2AC00914022;
-			productRefGroup = 1154140F1C14A2AC00914022 /* Products */;
+			mainGroup = 11BC28301C282085003ED3B7;
+			productRefGroup = 11BC283A1C282085003ED3B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1154140D1C14A2AC00914022 /* DZ3 */,
+				11BC28381C282085003ED3B7 /* DZ7 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1154140A1C14A2AC00914022 /* Sources */ = {
+		11BC28351C282085003ED3B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				115414121C14A2AC00914022 /* main.m in Sources */,
+				11BC283D1C282085003ED3B7 /* main.m in Sources */,
+				11BC28451C282F80003ED3B7 /* Employee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		115414131C14A2AC00914022 /* Debug */ = {
+		11BC283E1C282085003ED3B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -168,14 +174,14 @@
 			};
 			name = Debug;
 		};
-		115414141C14A2AC00914022 /* Release */ = {
+		11BC283F1C282085003ED3B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -204,14 +210,14 @@
 			};
 			name = Release;
 		};
-		115414161C14A2AC00914022 /* Debug */ = {
+		11BC28411C282085003ED3B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		115414171C14A2AC00914022 /* Release */ = {
+		11BC28421C282085003ED3B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -221,24 +227,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		115414091C14A2AC00914022 /* Build configuration list for PBXProject "DZ3" */ = {
+		11BC28341C282085003ED3B7 /* Build configuration list for PBXProject "DZ7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				115414131C14A2AC00914022 /* Debug */,
-				115414141C14A2AC00914022 /* Release */,
+				11BC283E1C282085003ED3B7 /* Debug */,
+				11BC283F1C282085003ED3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		115414151C14A2AC00914022 /* Build configuration list for PBXNativeTarget "DZ3" */ = {
+		11BC28401C282085003ED3B7 /* Build configuration list for PBXNativeTarget "DZ7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				115414161C14A2AC00914022 /* Debug */,
-				115414171C14A2AC00914022 /* Release */,
+				11BC28411C282085003ED3B7 /* Debug */,
+				11BC28421C282085003ED3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 115414061C14A2AC00914022 /* Project object */;
+	rootObject = 11BC28311C282085003ED3B7 /* Project object */;
 }
