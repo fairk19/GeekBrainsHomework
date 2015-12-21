@@ -11,7 +11,19 @@
 
 unsigned const sizeArray = 10;
 
+#define FILE_NAME @"MyArhive.my"
 
+void saveArrayToFile(NSArray* arrayToSave) {
+    NSData* freezedInfo = [NSKeyedArchiver archivedDataWithRootObject:arrayToSave];
+    [freezedInfo writeToFile:FILE_NAME atomically:NO];
+}
+
+NSMutableArray* loadEmployees() {
+    NSData* freezedInfo = [NSData dataWithContentsOfFile:FILE_NAME];
+    NSMutableArray* array = [NSKeyedUnarchiver unarchiveObjectWithData:freezedInfo];
+    
+    return array; 
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -21,7 +33,11 @@ int main(int argc, const char * argv[]) {
         NSMutableArray *employees = [[[NSMutableArray alloc] init] autorelease];
         
         for (int i = 0; i < sizeArray; i++) {
-            [employees addObject:[[Employee alloc] initWhithValues:(arc4random() % 1000) + 1000 name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]] ];
+            
+            Employee *employee = [[Employee alloc] initWhithValues:(arc4random() % 1000) + 1000 name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]];
+            
+            [employees addObject: employee];
+            [employee release];
         }
         
         for (Employee *employe in employees) {
@@ -51,9 +67,6 @@ int main(int argc, const char * argv[]) {
         for (Employee *employe in empoyeesEvenSalary) {
             NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary );
         }
-        
-        
-        
     }
     return 0;
 }
