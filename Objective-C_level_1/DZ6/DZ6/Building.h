@@ -14,6 +14,7 @@
 @property NSString *name;
 @property int age;
 
+- (instancetype) init;
 - (instancetype)initWithAge: (int) age name: (NSString *) name;
 
 @end

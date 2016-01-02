@@ -10,6 +10,14 @@
 
 @implementation Building 
 
+- (instancetype) init
+{
+    if (self = [super init]) {
+        return self;
+    }
+    return nil;
+}
+
 - (instancetype) initWithAge:(int)age name:(NSString *)name
 {
     if (self = [super init]) {

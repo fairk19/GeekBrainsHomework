@@ -26,61 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DZ7/main.m"
-            timestampString = "472404602.659"
+            timestampString = "473456477.042889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "main()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DZ7/main.m"
-            timestampString = "472404602.659"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "main()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "DZ7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexander/Documents/GeekBrainsHomework/Objective-C_level_1/DZ7/DZ7/main.m"
-                  timestampString = "472401256.244749"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1469">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "DZ7"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexander/Documents/GeekBrainsHomework/Objective-C_level_1/DZ7/DZ7/main.m"
-                  timestampString = "472401256.244979"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1518">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -10,6 +10,7 @@
 #import "Employee.h"
 
 unsigned const sizeArray = 10;
+unsigned const minSalary = 1000;
 
 #define FILE_NAME @"MyArhive.my"
 
@@ -34,7 +35,7 @@ int main(int argc, const char * argv[]) {
         
         for (int i = 0; i < sizeArray; i++) {
             
-            Employee *employee = [[Employee alloc] initWhithValues:(arc4random() % 1000) + 1000 name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]];
+            Employee *employee = [[Employee alloc] initWhithValues:(arc4random() % minSalary) + minSalary name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]];
             
             [employees addObject: employee];
             [employee release];
@@ -63,9 +64,19 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary );
         }
         
+        
+        [employees retain];
+        
+        saveArrayToFile(employees);
+        [employees release];
+        
+        employees = nil;
+        employees = loadEmployees();
+        
+        
         NSLog(@"------------------------------");
-        for (Employee *employe in empoyeesEvenSalary) {
-            NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary );
+        for (Employee *employe in employees) {
+            NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary);
         }
     }
     return 0;

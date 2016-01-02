@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Employee : NSObject
+@interface Employee : NSObject <NSCoding>
 
 @property (nonatomic, readwrite) unsigned salary;
 @property (nonatomic, readwrite, assign) NSString *name;
