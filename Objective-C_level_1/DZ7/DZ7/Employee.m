@@ -10,7 +10,7 @@
 
 @implementation Employee
 
-- (instancetype)initWhithValues: (unsigned) salary name: (NSString *) name surname: (NSString *) surname
+- (instancetype)initWhithValues: (NSUInteger) salary name: (NSString *) name surname: (NSString *) surname
 {
     self = [super init];
     
@@ -27,10 +27,7 @@
     
     [aCoder encodeObject:_name forKey:@"name"];
     [aCoder encodeObject:_surname forKey:@"surname"];
-    
-    NSNumber *salaryObj = [[NSNumber alloc] initWithUnsignedInt:_salary];
-    [aCoder encodeObject:salaryObj forKey:@"salary"];
-    [salaryObj release];
+    [aCoder encodeObject:[NSNumber numberWithUnsignedInteger:_salary] forKey:@"salary"];
     
 }
 
@@ -40,17 +37,18 @@
         
         _surname = [aDecoder decodeObjectForKey:@"surname"];
         _name = [aDecoder decodeObjectForKey:@"name"];
+        _salary = [[aDecoder decodeObjectForKey:@"salary"] unsignedIntegerValue];
         
-        NSNumber *salaryObj = [[NSNumber alloc] initWithUnsignedInt:_salary];
-        salaryObj = [aDecoder decodeObjectForKey:@"salary"];
-        _salary = (unsigned)[salaryObj integerValue];
-        [salaryObj release];
-        
-        [_name retain];
         [_surname retain];
-        
+        [_name retain];
     }
     return self;
 }
 
+-(void)dealloc
+{
+    _name = nil;
+    _surname = nil;
+    [super dealloc];
+}
 @end

@@ -15,17 +15,17 @@ unsigned const minSalary = 1000;
 #define FILE_NAME @"MyArhive.my"
 
 void saveArrayToFile(NSArray* arrayToSave) {
-    NSData* freezedInfo = [NSKeyedArchiver archivedDataWithRootObject:arrayToSave];
-    [freezedInfo writeToFile:FILE_NAME atomically:NO];
+    NSData* date = [NSKeyedArchiver archivedDataWithRootObject:arrayToSave];
+    [date writeToFile:FILE_NAME atomically:NO];
 }
-
 NSMutableArray* loadEmployees() {
-    NSData* freezedInfo = [NSData dataWithContentsOfFile:FILE_NAME];
-    NSMutableArray* array = [NSKeyedUnarchiver unarchiveObjectWithData:freezedInfo];
-    
+    NSData* date = [NSData dataWithContentsOfFile:FILE_NAME];    
+    if (!date) {
+        return nil;
+    }
+    NSMutableArray* array = [NSKeyedUnarchiver unarchiveObjectWithData:date];
     return array; 
 }
-
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -35,14 +35,14 @@ int main(int argc, const char * argv[]) {
         
         for (int i = 0; i < sizeArray; i++) {
             
-            Employee *employee = [[Employee alloc] initWhithValues:(arc4random() % minSalary) + minSalary name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]];
+            Employee *employee = [[Employee alloc] initWhithValues:(arc4random() % minSalary + 1) + minSalary name:[namesArray objectAtIndex:arc4random() % [namesArray count]] surname:[surnamesArray objectAtIndex:arc4random() % [surnamesArray count]]];
             
             [employees addObject: employee];
             [employee release];
         }
         
         for (Employee *employe in employees) {
-            NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary );
+            NSLog(@"%@ %@'s salary is $%lu", employe.name, employe.surname, (unsigned long)employe.salary );
         }
         
         NSMutableArray *empoyeesEvenSalary = [[[NSMutableArray alloc] initWithArray:employees] autorelease];
@@ -61,22 +61,17 @@ int main(int argc, const char * argv[]) {
         NSLog(@"------------------------------");
         
         for (Employee *employe in employees) {
-            NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary );
+            NSLog(@"%@ %@'s salary is $%lu", employe.name, employe.surname, (unsigned long)employe.salary );
         }
         
-        
-        [employees retain];
-        
         saveArrayToFile(employees);
-        [employees release];
-        
         employees = nil;
         employees = loadEmployees();
         
         
         NSLog(@"------------------------------");
         for (Employee *employe in employees) {
-            NSLog(@"%@ %@'s salary is $%u", employe.name, employe.surname, employe.salary);
+            NSLog(@"%@ %@'s salary is $%lu", employe.name, employe.surname, (unsigned long)employe.salary);
         }
     }
     return 0;
