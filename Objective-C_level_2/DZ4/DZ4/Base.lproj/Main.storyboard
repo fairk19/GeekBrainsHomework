@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-ft-qUb">
+                                <rect key="frame" x="279" y="285" width="43" height="30"/>
+                                <state key="normal" title="Старт"/>
+                                <connections>
+                                    <action selector="startAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="av9-3N-1MU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axd-Y9-3IU">
+                                <rect key="frame" x="40" y="40" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Zp-kw-OI8"/>
+                                    <constraint firstAttribute="width" constant="50" id="jOu-3R-aVb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auE-VM-Jhm">
+                                <rect key="frame" x="510" y="530" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EEg-GP-CE1"/>
+                                    <constraint firstAttribute="height" constant="50" id="rYb-oL-WCW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpF-2F-gU5">
+                                <rect key="frame" x="510" y="40" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="08Z-ZF-0Ba"/>
+                                    <constraint firstAttribute="width" constant="50" id="RS3-zh-sxC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HM5-80-Kdz">
+                                <rect key="frame" x="40" y="530" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="jrS-gV-WgX"/>
+                                    <constraint firstAttribute="height" constant="50" id="lE5-lu-GSP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-hX-Vlc">
+                                <rect key="frame" x="279" y="320" width="43" height="30"/>
+                                <state key="normal" title="Цвет"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHU-1r-xik"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HM5-80-Kdz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="6Np-Pm-JoX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dyP-hX-Vlc" secondAttribute="bottom" constant="250" id="7nB-Bm-Cmu"/>
+                            <constraint firstItem="HM5-80-Kdz" firstAttribute="centerX" secondItem="axd-Y9-3IU" secondAttribute="centerX" id="89d-y0-ics"/>
+                            <constraint firstItem="ddR-ft-qUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E34-at-Dwt"/>
+                            <constraint firstItem="auE-VM-Jhm" firstAttribute="centerX" secondItem="fpF-2F-gU5" secondAttribute="centerX" id="MIq-E7-44g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fpF-2F-gU5" secondAttribute="trailing" constant="20" id="UKm-5E-jLi"/>
+                            <constraint firstAttribute="bottom" secondItem="HM5-80-Kdz" secondAttribute="bottom" constant="20" symbolic="YES" id="YDl-W3-Dus"/>
+                            <constraint firstItem="auE-VM-Jhm" firstAttribute="centerY" secondItem="HM5-80-Kdz" secondAttribute="centerY" id="a44-HQ-r93"/>
+                            <constraint firstItem="ddR-ft-qUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="efe-pq-Tpl"/>
+                            <constraint firstItem="dyP-hX-Vlc" firstAttribute="leading" secondItem="ddR-ft-qUb" secondAttribute="leading" id="h84-JP-auO"/>
+                            <constraint firstItem="dyP-hX-Vlc" firstAttribute="centerX" secondItem="ddR-ft-qUb" secondAttribute="centerX" id="hlt-3z-hDl"/>
+                            <constraint firstItem="axd-Y9-3IU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="jTQ-nE-UWQ"/>
+                            <constraint firstItem="axd-Y9-3IU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="voK-u9-gUo"/>
+                            <constraint firstItem="fpF-2F-gU5" firstAttribute="centerY" secondItem="axd-Y9-3IU" secondAttribute="centerY" id="zF3-dk-0Gr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ViewTriangle" destination="axd-Y9-3IU" id="Jgr-Nr-b4J"/>
+                        <outlet property="viewCircle" destination="auE-VM-Jhm" id="eEe-Ik-2W6"/>
+                        <outlet property="viewSemicircle" destination="HM5-80-Kdz" id="Lo9-YK-Y2g"/>
+                        <outlet property="viewSquare" destination="fpF-2F-gU5" id="fYR-yQ-EXA"/>
+                        <outlet property="viewTriangle" destination="axd-Y9-3IU" id="lK0-Dk-8ff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="400"/>
+        </scene>
+    </scenes>
+</document>
